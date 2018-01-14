@@ -1,0 +1,19 @@
+{
+  "name": "messanging-app",
+  "version": "1.0.0",
+  "description": "A chat app built on Express.js, Socket.io. ",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js"
+  },
+  "author": "Abishek kumar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.11",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
+}
