@@ -5,7 +5,7 @@ var app = express();
 
 var port = 8000;
 
-app.listen(port, function(){
+var server = app.listen(port, function(){
 	console.log("App running on " + port);
 });
 
@@ -13,4 +13,15 @@ app.listen(port, function(){
 // 	res.send('hello worfbjfbfbvbld');
 // });
 
+//saying express to use public directory as root address.
 app.use(express.static('public'));
+
+var io = socket(server);
+
+// this is basically saying that on connection do this. socket parameter inside
+//function determines client.
+io.on('connection', function(socket){
+	socket.on("chat", function(data){
+		io.sockets.emit("chat", data);
+	});	
+});
